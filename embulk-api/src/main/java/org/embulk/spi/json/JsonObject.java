@@ -25,6 +25,7 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Set;
+import org.msgpack.value.Value;
 
 /**
  * Represents an object in JSON.
@@ -430,6 +431,11 @@ public final class JsonObject extends AbstractMap<String, JsonValue> implements 
         }
         builder.append("}");
         return builder.toString();
+    }
+
+    @Deprecated
+    public Value toMsgpack() {
+        return null;
     }
 
     /**

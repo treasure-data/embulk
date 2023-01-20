@@ -16,6 +16,8 @@
 
 package org.embulk.spi.json;
 
+import org.msgpack.value.Value;
+
 /**
  * Represents {@code null} in JSON.
  *
@@ -93,6 +95,11 @@ public final class JsonNull implements JsonValue {
     @Override
     public String toJson() {
         return "null";
+    }
+
+    @Deprecated
+    public Value toMsgpack() {
+        return null;
     }
 
     /**

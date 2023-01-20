@@ -17,6 +17,7 @@
 package org.embulk.spi.json;
 
 import java.util.Objects;
+import org.msgpack.value.Value;
 
 /**
  * Represents a string in JSON.
@@ -133,6 +134,11 @@ public final class JsonString implements JsonValue {
             return this.literal;
         }
         return escapeStringForJsonLiteral(this.value).toString();
+    }
+
+    @Deprecated
+    public Value toMsgpack() {
+        return null;
     }
 
     /**

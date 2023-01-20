@@ -19,6 +19,7 @@ package org.embulk.spi.json;
 import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.List;
+import org.msgpack.value.Value;
 
 /**
  * Represents an array in JSON.
@@ -174,6 +175,11 @@ public final class JsonArray extends AbstractList<JsonValue> implements JsonValu
         }
         builder.append("]");
         return builder.toString();
+    }
+
+    @Deprecated
+    public Value toMsgpack() {
+        return null;
     }
 
     /**
